@@ -12,6 +12,9 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //using the app routes
+app.get("/", (req, res) => {
+    res.send("Hello world");
+})
 app.use("/api/v1", require("./Routes/SampleRouter"));
 app.listen(port || 5000, ()=>
 {
